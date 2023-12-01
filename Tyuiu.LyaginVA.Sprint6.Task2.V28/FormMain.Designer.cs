@@ -30,10 +30,11 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxCondition_LVA = new System.Windows.Forms.GroupBox();
+            this.pictureBoxFormula_LVA = new System.Windows.Forms.PictureBox();
             this.textBoxCondition_LVA = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBoxInputData_LVA = new System.Windows.Forms.GroupBox();
@@ -44,18 +45,18 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.buttonResult_LVA = new System.Windows.Forms.Button();
             this.buttonReference_LVA = new System.Windows.Forms.Button();
             this.groupBoxOutputData_LVA = new System.Windows.Forms.GroupBox();
-            this.textBoxResult_LVA = new System.Windows.Forms.TextBox();
-            this.pictureBoxFormula_LVA = new System.Windows.Forms.PictureBox();
-            this.dataGridViewFunction_LVA = new System.Windows.Forms.DataGridView();
             this.chartFunction_LVA = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dataGridViewFunction_LVA = new System.Windows.Forms.DataGridView();
             this.ColumnVarX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFunction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxResult_LVA = new System.Windows.Forms.TextBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBoxCondition_LVA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_LVA)).BeginInit();
             this.groupBoxInputData_LVA.SuspendLayout();
             this.groupBoxOutputData_LVA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_LVA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction_LVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction_LVA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction_LVA)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCondition_LVA
@@ -69,6 +70,15 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.groupBoxCondition_LVA.TabIndex = 0;
             this.groupBoxCondition_LVA.TabStop = false;
             this.groupBoxCondition_LVA.Text = "Условие";
+            // 
+            // pictureBoxFormula_LVA
+            // 
+            this.pictureBoxFormula_LVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFormula_LVA.Image")));
+            this.pictureBoxFormula_LVA.Location = new System.Drawing.Point(180, 54);
+            this.pictureBoxFormula_LVA.Name = "pictureBoxFormula_LVA";
+            this.pictureBoxFormula_LVA.Size = new System.Drawing.Size(341, 42);
+            this.pictureBoxFormula_LVA.TabIndex = 4;
+            this.pictureBoxFormula_LVA.TabStop = false;
             // 
             // textBoxCondition_LVA
             // 
@@ -174,25 +184,23 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.groupBoxOutputData_LVA.TabStop = false;
             this.groupBoxOutputData_LVA.Text = "Вывод данных";
             // 
-            // textBoxResult_LVA
+            // chartFunction_LVA
             // 
-            this.textBoxResult_LVA.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxResult_LVA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxResult_LVA.Location = new System.Drawing.Point(6, 19);
-            this.textBoxResult_LVA.Name = "textBoxResult_LVA";
-            this.textBoxResult_LVA.ReadOnly = true;
-            this.textBoxResult_LVA.Size = new System.Drawing.Size(100, 16);
-            this.textBoxResult_LVA.TabIndex = 0;
-            this.textBoxResult_LVA.Text = "Результат:";
-            // 
-            // pictureBoxFormula_LVA
-            // 
-            this.pictureBoxFormula_LVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFormula_LVA.Image")));
-            this.pictureBoxFormula_LVA.Location = new System.Drawing.Point(180, 54);
-            this.pictureBoxFormula_LVA.Name = "pictureBoxFormula_LVA";
-            this.pictureBoxFormula_LVA.Size = new System.Drawing.Size(341, 42);
-            this.pictureBoxFormula_LVA.TabIndex = 4;
-            this.pictureBoxFormula_LVA.TabStop = false;
+            chartArea1.Name = "ChartArea1";
+            this.chartFunction_LVA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFunction_LVA.Legends.Add(legend1);
+            this.chartFunction_LVA.Location = new System.Drawing.Point(138, 41);
+            this.chartFunction_LVA.Name = "chartFunction_LVA";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartFunction_LVA.Series.Add(series1);
+            this.chartFunction_LVA.Size = new System.Drawing.Size(556, 378);
+            this.chartFunction_LVA.TabIndex = 6;
+            this.chartFunction_LVA.Text = "chartFunction_LVA";
             // 
             // dataGridViewFunction_LVA
             // 
@@ -206,24 +214,6 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.dataGridViewFunction_LVA.Size = new System.Drawing.Size(126, 378);
             this.dataGridViewFunction_LVA.TabIndex = 5;
             // 
-            // chartFunction_LVA
-            // 
-            chartArea7.Name = "ChartArea1";
-            this.chartFunction_LVA.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartFunction_LVA.Legends.Add(legend7);
-            this.chartFunction_LVA.Location = new System.Drawing.Point(138, 41);
-            this.chartFunction_LVA.Name = "chartFunction_LVA";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.IsVisibleInLegend = false;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartFunction_LVA.Series.Add(series7);
-            this.chartFunction_LVA.Size = new System.Drawing.Size(556, 378);
-            this.chartFunction_LVA.TabIndex = 6;
-            this.chartFunction_LVA.Text = "chartFunction_LVA";
-            // 
             // ColumnVarX
             // 
             this.ColumnVarX.HeaderText = "X";
@@ -235,6 +225,17 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.ColumnFunction.HeaderText = "F(X)";
             this.ColumnFunction.Name = "ColumnFunction";
             this.ColumnFunction.Width = 50;
+            // 
+            // textBoxResult_LVA
+            // 
+            this.textBoxResult_LVA.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxResult_LVA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxResult_LVA.Location = new System.Drawing.Point(6, 19);
+            this.textBoxResult_LVA.Name = "textBoxResult_LVA";
+            this.textBoxResult_LVA.ReadOnly = true;
+            this.textBoxResult_LVA.Size = new System.Drawing.Size(100, 16);
+            this.textBoxResult_LVA.TabIndex = 0;
+            this.textBoxResult_LVA.Text = "Результат:";
             // 
             // FormMain
             // 
@@ -251,13 +252,13 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
             this.Text = "Спринт 6 | Таск 2 | Вариант 28 | Лягин В.А.";
             this.groupBoxCondition_LVA.ResumeLayout(false);
             this.groupBoxCondition_LVA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_LVA)).EndInit();
             this.groupBoxInputData_LVA.ResumeLayout(false);
             this.groupBoxInputData_LVA.PerformLayout();
             this.groupBoxOutputData_LVA.ResumeLayout(false);
             this.groupBoxOutputData_LVA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormula_LVA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction_LVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction_LVA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFunction_LVA)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,6 +282,7 @@ namespace Tyuiu.LyaginVA.Sprint6.Task2.V28
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction_LVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVarX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFunction;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
 
